@@ -20,7 +20,7 @@ function Movie(title, director, budget) {
       } else if (this.budget < 100000000) {
         return false;
       }
-    });
+    }); 
 }
 
 const titanikas = new Movie("Titanic", "James Cameron", 200000000);
