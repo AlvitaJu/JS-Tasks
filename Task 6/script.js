@@ -21,7 +21,7 @@ const users = [
 ];
 
 const getUserAverageAge =
-  users.reduce((acc, curr) => acc.age + curr.age, 0) / users.length;
+  users.reduce((acc, curr) => acc + curr.age, 0) / users.length;
 console.log(getUserAverageAge);
 
 const getUsersNames = users.map((vardai) => vardai.name);
