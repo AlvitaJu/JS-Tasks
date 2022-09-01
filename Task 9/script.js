@@ -11,18 +11,18 @@ wasExpensive() - jeigu filmo "budget" yra daugiau nei 100 000 000 mln USD, tada 
 ------------------------------------------------------------------------------------------------------ */
 
 class Movie {
-    constructor(title, director, budget) {
-        (this.title = title),
-            (this.director = director),
-            (this.budget = budget),
-            (this.wasExpensive = function () {
-                if (this.budget > 100000000) {
-                    return true;
-                } else if (this.budget < 100000000) {
-                    return false;
-                }
-            });
-    }
+  constructor(title, director, budget) {
+    (this.title = title),
+      (this.director = director),
+      (this.budget = budget),
+      (this.wasExpensive = function () {
+        if (this.budget > 100000000) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+  }
 }
 
 const titanikas = new Movie("Titanic", "James Cameron", 200000000);
