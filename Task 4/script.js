@@ -14,17 +14,11 @@ const ENDPOINT = "cars.json";
 fetch(ENDPOINT)
   .then((res) => res.json())
   .then((cars) => {
-    console.log(cars);
     carsResults(cars);
   })
   .catch((error) => console.log(error));
 
-const tbody = document.querySelector("tbody");
-
 function carsResults(cars) {
-  const carBrand = cars.brand;
-  const carModel = cars.models;
-
   cars.forEach((car) => {
     const ul_s = document.createElement("ul");
     ul_s.innerText = car.brand;

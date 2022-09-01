@@ -11,6 +11,39 @@ Pastaba: Sukurta kortelė, kurioje yra pateikiama vartotojo informacija, turi
 turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
-const ENDPOINT = 'https://api.github.com/users';
+const ENDPOINT = "https://api.github.com/users";
 
+document.getElementById("btn").addEventListener("click", myFunction);
 
+function myFunction() {
+  fetch(ENDPOINT)
+    .then((res) => res.json())
+    .then((users) => {
+      console.log(users);
+      usersResults(users);
+    })
+    .catch((error) => console.log(error));
+}
+
+function usersResults(users) {
+  users.forEach((user) => {
+    const login = document.createElement("p");
+    login.innerText = user.login;
+    login.style.fontSize = "xx-large";
+    login.style.padding = "30px";
+
+    const img = document.createElement("img");
+    img.src = user.avatar_url;
+    img.alt = `${users.login} profile picture`;
+    img.style.width = "300px";
+    img.style.borderRadius = '30px';
+
+    document.getElementById("output").append(login, img);
+  });
+
+  function deleteInfo() {
+    const message = document.getElementById("message");
+    message.innerText = "";
+  }
+  deleteInfo();
+}
